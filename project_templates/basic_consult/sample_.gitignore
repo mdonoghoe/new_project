@@ -1,0 +1,24 @@
+# R generated files #
+#####################
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+# Project directories #
+#######################
+data/derived/*
+docs/*
+figures/*
+output/*
+reports/*
+
+# Things to keep #
+##################
+
+# Keep README.md files
+!**/README.md
+
+# Keep source files in report directory
+!/reports/**/*.Rmd
+!/reports/**/*.R
