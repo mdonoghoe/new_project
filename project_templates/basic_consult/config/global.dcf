@@ -2,15 +2,13 @@ version: 0.10.1
 data_loading: FALSE
 data_loading_header: TRUE
 data_ignore:
-cache_loading: TRUE
+cache_loading: FALSE
 recursive_loading: FALSE
 munging: FALSE
 logging: FALSE
 logging_level: INFO
 load_libraries: TRUE
-libraries: stats, reshape2, plyr, tidyverse, lubridate, readxl,
-       ProjectTemplate, repmis, janitor, broom, jtools, labelled,
-       biometrics
+libraries: stats, ProjectTemplate
 as_factors: FALSE
 attach_internal_libraries: FALSE
 cache_loaded_data: FALSE
