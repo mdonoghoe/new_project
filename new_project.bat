@@ -121,7 +121,20 @@ rm --force .gitignore
 ren sample_.gitignore .gitignore
 rem delete template README
 rm --force README.md
-rem TODO: rename the sample README file (& edit it to include the project name?)
+rem edit the sample README file to include the project name
+setlocal enabledelayedexpansion
+echo !project_name! > README.md
+(
+	setlocal disabledelayedexpansion
+	for /f "skip=1 delims=" %%L in ('findstr /n "^" sample_README.md') do (
+		set "line=%%L"
+		setlocal enabledelayedexpansion
+		set "line=!line:*:=!"
+		echo(!line!
+		endlocal
+	)
+) >> README.md
+rm --force sample_README.md
 rem delete the cache folder & its contents (hopefully this doesn't break anything later)
 rmdir /s /q cache
 
