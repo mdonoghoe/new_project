@@ -135,8 +135,11 @@ echo !project_name! > README.md
 	)
 ) >> README.md
 rm --force sample_README.md
-rem delete the cache folder & its contents (hopefully this doesn't break anything later)
+rem delete the cache folder & its contents
 rmdir /s /q cache
+rem make an empty cache folder & hide it
+mkdir cache
+attrib +h cache
 
 echo Initialising git repo...
 rm -rf .git
