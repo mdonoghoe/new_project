@@ -145,6 +145,9 @@ git config core.safecrlf false
 git add .
 git commit -q -m "Initial commit"
 
+rem open the directory in file explorer
+start .
+
 cd ..
 rm --force create_project.R
 
