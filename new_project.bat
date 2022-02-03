@@ -78,7 +78,7 @@ endlocal
 	set "template_name=basic_consult"
 	set /p template_name= "Template to use (blank for default): "
 	rem check that a folder with that name exists
-	set "template_location=C:\Users\Mark\OneDrive - UNSW\General_consulting\_Template\new_project\project_templates"
+	set "template_location=C:\Users\Mark Donoghoe\OneDrive - UNSW\General_consulting\_Template\new_project\project_templates"
 	set "template_path=!template_location!\!template_name!"
 	if not exist "!template_path!\" (
 		echo Error : Template does not exist
