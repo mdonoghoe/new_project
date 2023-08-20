@@ -78,7 +78,7 @@ endlocal
 	set "template_name=basic_consult"
 	set /p template_name= "Template to use (blank for default): "
 	rem check that a folder with that name exists
-	set "template_location=C:\Users\Mark Donoghoe\OneDrive - UNSW\General_consulting\_Template\new_project\project_templates"
+	set "template_location=C:\Users\mdonoghoe\OneDrive - UNSW\General_consulting\_Template\new_project\project_templates"
 	set "template_path=!template_location!\!template_name!"
 	if not exist "!template_path!\" (
 		echo Error : Template does not exist
@@ -117,10 +117,10 @@ cd %project_name%
 rem rename sample Rproj file
 ren sample.Rproj "%project_name%.Rproj"
 rem rename sample gitignore file
-rm --force .gitignore
+if exist .gitignore del /q .gitignore
 ren sample_.gitignore .gitignore
 rem delete template README
-rm --force README.md
+if exist README.md del /q README.md
 rem edit the sample README file to include the project name
 setlocal enabledelayedexpansion
 echo !project_name! > README.md
@@ -134,7 +134,7 @@ echo !project_name! > README.md
 		endlocal
 	)
 ) >> README.md
-rm --force sample_README.md
+if exist sample_README.md del /q sample_README.md
 rem delete the cache folder & its contents
 rmdir /s /q cache
 rem make an empty cache folder & hide it
@@ -142,7 +142,8 @@ mkdir cache
 attrib +h cache
 
 echo Initialising git repo...
-rm -rf .git
+if exist .git del /s /q .git
+if exist .git rmdir /s /q .git
 git init
 git config core.safecrlf false
 git add .
@@ -152,7 +153,7 @@ rem open the directory in file explorer
 start .
 
 cd ..
-rm --force create_project.R
+if exist create_project.R del /q create_project.R
 
 echo Done!
 pause
