@@ -1,0 +1,18 @@
+version: 0.10.3
+data_loading: FALSE
+data_loading_header: TRUE
+data_ignore:
+cache_loading: FALSE
+recursive_loading: FALSE
+munging: FALSE
+logging: FALSE
+logging_level: INFO
+load_libraries: TRUE
+libraries: stats, ProjectTemplate, targets, tarchetypes
+as_factors: FALSE
+attach_internal_libraries: FALSE
+cache_loaded_data: FALSE
+sticky_variables: NONE
+tables_type: tibble
+underscore_variables: TRUE
+cache_file_format: RData

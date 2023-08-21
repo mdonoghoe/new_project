@@ -1,0 +1,37 @@
+# R generated files #
+#####################
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+# Project directories #
+#######################
+cache/*
+data/derived/*
+docs/*
+figures/*
+output/*
+reports/*
+src/scratch/*
+
+# Things to keep #
+##################
+
+# Keep README.md files
+!**/README.md
+
+# Keep source files in report directory
+!/reports/**/*.Rmd
+!/reports/**/*.R
+
+# Keep targets database
+!cache/meta
+cache/meta/*
+!cache/meta/meta
+
+# Other stuff #
+###############
+
+# This is automatically created by ProjectTemplate
+config/_targets.yaml

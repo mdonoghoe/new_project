@@ -137,9 +137,10 @@ echo !project_name! > README.md
 if exist sample_README.md del /q sample_README.md
 rem delete the cache folder & its contents
 rmdir /s /q cache
-rem make an empty cache folder & hide it
+rem make an empty cache folder & hide it --- unless we are using targets
 mkdir cache
 attrib +h cache
+if exist lib/prep_targets.R attrib -h cache
 
 echo Initialising git repo...
 if exist .git del /s /q .git
