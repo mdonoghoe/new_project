@@ -2,8 +2,7 @@
 
 # Do all of the setup work
 # This also loads and configures the targets package
-# suppressMessages(ProjectTemplate::load.project())
-# (Don't need to do this because it is in .Rprofile now)
+suppressMessages(ProjectTemplate::load.project())
 
 # Project folders
 projdir <- rprojroot::find_rstudio_root_file()
