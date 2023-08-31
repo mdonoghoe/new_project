@@ -10,7 +10,7 @@ for /f "usebackq delims=" %%I in (`powershell %psCommand%`) do set "folder=%%I"
 setlocal enabledelayedexpansion
 echo New project will be created in !folder!
 endlocal
-cd %folder%
+cd /D %folder%
 :askProject
 	set /p project_name= "New project name: " || goto :askProject
 	rem check the folder name is valid
@@ -113,7 +113,7 @@ echo Creating project...
 %Rdir%\bin\x64\Rscript create_project.R
 
 echo Configuring project...
-cd %project_name%
+cd /D %project_name%
 rem rename sample Rproj file
 ren sample.Rproj "%project_name%.Rproj"
 rem rename sample gitignore file
